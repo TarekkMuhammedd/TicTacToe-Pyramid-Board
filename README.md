@@ -76,6 +76,4 @@ Tarek Muhammed Abdel-Hamid
 
 Date : 9/08/2024
 
-## License
 
-Specify a license here, or remove this section.
