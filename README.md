@@ -1,6 +1,6 @@
 # Pyramid Game
 
-A simple console-based tic-tac-toe variant played on a pyramid-shaped board. You can play against a friend or against a computer opponent.
+A simple console-based tic-tac-toe variant written in C++, played on a pyramid-shaped board. You can play against a friend or against a computer opponent.
 
 ## Overview
 
@@ -15,7 +15,7 @@ The game board is a 3x5 grid where some cells are blocked, forming a pyramid sha
 
 ## Project Structure
 
-The code is organized around a few classes and functions:
+The code is organized into classes and functions:
 
 | Name | Type | Purpose |
 | --- | --- | --- |
@@ -35,10 +35,10 @@ The code is organized around a few classes and functions:
 
 ## Requirements
 
-- Python 3.x
-- No external libraries are required. The game uses only the standard library.
+- A C++ compiler with C++11 support or later, such as `g++` (GCC 4.8+) or `clang++`.
+- No external libraries are required. The game uses only the C++ standard library.
 
-## How to Run
+## How to Build and Run
 
 1. Clone the repository:
 
@@ -47,26 +47,34 @@ The code is organized around a few classes and functions:
    cd <repo-name>
    ```
 
-2. Run the game. Replace `pyramid_game.py` with the actual file name:
+2. Compile. Replace `pyramid_game.cpp` with the actual file name:
 
    ```bash
-   python pyramid_game.py
+   g++ -std=c++11 -o pyramid_game pyramid_game.cpp
    ```
 
-3. Choose a game mode when prompted:
+3. Run the game:
+
+   ```bash
+   ./pyramid_game
+   ```
+
+   On Windows, the executable is `pyramid_game.exe`.
+
+4. Choose a game mode when prompted:
    - Play with a friend, or
    - Play against the computer.
 
-4. Enter your name and symbol when prompted. In computer mode, you choose your symbol and the computer takes the other one.
+5. Enter your name and symbol when prompted. In computer mode, you choose your symbol and the computer takes the other one.
 
-5. On your turn, enter the row and column of the cell you want to fill.
+6. On your turn, enter the row and column of the cell you want to fill.
 
 ## How It Works
 
 1. `ThePyramidGame` starts the program and asks for a game mode.
 2. `InitBoard` creates the board with blocked and empty cells.
 3. Players enter their names and symbols.
-4. `GameMaster` alternates turns. Human moves go through `PutInCell`. Computer moves come from `RandomPlayer.get_move`.
+4. `GameMaster` alternates turns. Human moves go through `PutInCell`. Computer moves come from `RandomPlayer::get_move`.
 5. After every move, the game checks for a winner or a draw.
 6. When the game ends, the final board is shown and `PrintWinner` announces the result.
 
@@ -74,6 +82,4 @@ The code is organized around a few classes and functions:
 
 Tarek Muhammed Abdel-Hamid
 
-Date : 9/08/2024
-
-
+Date: 9 Aug 2024
